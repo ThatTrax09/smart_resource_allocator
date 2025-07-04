@@ -19,6 +19,12 @@ class ChatAssistant:
         if match_person:
             name = match_person.group(1).capitalize()
             return self._what_is_assigned_to(name)
+        
+        match_count_tasks = re.match(r"how many (\w+) are doing (\w+)\??", query)
+        if match_count_tasks:
+            type = match_count_tasks.group(1)
+            skill = match_count_tasks.group(2)
+            return self._how_many_doing(type, skill)
 
         if "list all workers" in query:
             return self._list_all_workers()
@@ -59,6 +65,20 @@ class ChatAssistant:
             lines.append(f"{resource}: {', '.join(task_names)}")
         return "\n".join(lines)
     
+    def _how_many_doing(self, type, skill):
+        count = 0
+        list_assigned = []
+        if type == 'machines':
+            list_assigned = self.machines
+        else:
+            list_assigned = self.workers
+        if len(list_assigned) != 0:
+            for worker in list_assigned:
+                for assignment in self.assignments[worker]:
+                    if assignment['required_skill'] == skill:
+                        count += 1
+                        break
+        return count
     def _list_all_workers(self):
         print('The workers are:')
         return(', '.join(self.workers))
