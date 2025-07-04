@@ -24,6 +24,56 @@
         "id": "T5",
         "name": "Label Order #102",
         "required_skill": "labeling"
+      },
+      {
+        "id": "T6",
+        "name": "Transport Order #102",
+        "required_skill": "transporting"
+      },
+      {
+        "id": "T7",
+        "name": "Transport Order #103",
+        "required_skill": "transporting"
+      },
+      {
+        "id": "T8",
+        "name": "Transport Order #104",
+        "required_skill": "transporting"
+      },
+      {
+        "id": "T9",
+        "name": "Pack Order #103",
+        "required_skill": "packing"
+      },
+      {
+        "id": "T10",
+        "name": "Pack Order #104",
+        "required_skill": "packing"
+      },
+      {
+        "id": "T11",
+        "name": "Label Order #103",
+        "required_skill": "labeling"
+      },
+      {
+        "id": "T12",
+        "name": "Label Order #104",
+        "required_skill": "labeling"
+      },
+      {
+        "id": "T13",
+        "name": "Label Order #105",
+        "required_skill": "labeling"
+      },
+      {
+        "id": "T14",
+        "name": "Pack Order #105",
+        "required_skill": "packing"
+      },
+      {
+        "id": "T15",
+        "name": "Pack Order #106",
+        "required_skill": "packing"
       }
     ]
   }

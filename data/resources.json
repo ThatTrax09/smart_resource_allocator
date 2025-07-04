@@ -13,6 +13,24 @@
         "max_tasks": 1
       },
       {
+        "name": "Cindy",
+        "type": "worker",
+        "skills": ["labeling"],
+        "max_tasks": 2
+      },
+      {
+        "name": "Transporter300",
+        "type": "machine",
+        "skills": ["transporting"],
+        "max_tasks": 3
+      },
+      {
+        "name": "Mary",
+        "type": "worker",
+        "skills": ["transporting", "labelling"],
+        "max_tasks": 2
+      },
+      {
         "name": "LabelBot3000",
         "type": "machine",
         "skills": ["labeling"],
@@ -22,7 +40,7 @@
         "name": "PackMaster",
         "type": "machine",
         "skills": ["packing"],
-        "max_tasks": 2
+        "max_tasks": 5
       }
     ]
   }
