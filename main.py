@@ -3,8 +3,8 @@ from assistant.chat_interface import ChatAssistant
 
 def main():
     assigner = TaskAssigner(
-        "smart_resource_allocator/data/resources.json",
-        "smart_resource_allocator/data/tasks.json"
+        "data/resources.json",
+        "data/tasks.json"
     )
     assigner.assign_tasks()
 
