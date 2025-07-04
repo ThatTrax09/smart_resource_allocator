@@ -1,0 +1,29 @@
+{
+    "resources": [
+      {
+        "name": "Alice",
+        "type": "worker",
+        "skills": ["packing", "labeling"],
+        "max_tasks": 2
+      },
+      {
+        "name": "Bob",
+        "type": "worker",
+        "skills": ["transporting", "packing"],
+        "max_tasks": 1
+      },
+      {
+        "name": "LabelBot3000",
+        "type": "machine",
+        "skills": ["labeling"],
+        "max_tasks": 3
+      },
+      {
+        "name": "PackMaster",
+        "type": "machine",
+        "skills": ["packing"],
+        "max_tasks": 2
+      }
+    ]
+  }
+  
