@@ -43,6 +43,20 @@ class TaskAssigner:
 
     def get_assignments(self):
         return self.assignments
+    
+    def get_workers(self):
+        workers = []
+        for resource in self.resources:
+            if resource['type'] == 'worker':
+                workers.append(resource['name'])
+        return workers
+    
+    def get_machines(self):
+        workers = []
+        for resource in self.resources:
+            if resource['type'] == 'machine':
+                workers.append(resource['name'])
+        return workers
 
     def print_assignments(self):
         print("=== Task Assignments ===")

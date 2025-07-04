@@ -4,23 +4,28 @@ class ChatAssistant:
     def __init__(self, task_assigner):
         self.assigner = task_assigner
         self.assignments = task_assigner.get_assignments()
+        self.workers = task_assigner.get_workers()
+        self.machines = task_assigner.get_machines()
 
     def handle_query(self, query):
         query = query.lower().strip()
 
-        # 1. Who is doing <task_type>?
         match_task = re.match(r"who is doing (\w+)\??", query)
         if match_task:
             skill = match_task.group(1)
             return self._who_is_doing(skill)
 
-        # 2. What is <name> assigned to?
         match_person = re.match(r"what is (\w+) assigned to\??", query)
         if match_person:
             name = match_person.group(1).capitalize()
             return self._what_is_assigned_to(name)
 
-        # 3. List all task assignments
+        if "list all workers" in query:
+            return self._list_all_workers()
+        
+        if "list all machines" in query:
+            return self._list_all_machines()
+
         if "list all task assignments" in query:
             return self._list_all_assignments()
 
@@ -53,3 +58,11 @@ class ChatAssistant:
             task_names = [t['name'] for t in tasks]
             lines.append(f"{resource}: {', '.join(task_names)}")
         return "\n".join(lines)
+    
+    def _list_all_workers(self):
+        print('The workers are:')
+        return(', '.join(self.workers))
+    
+    def _list_all_machines(self):
+        print('The machines are:')
+        return(', '.join(self.machines))
