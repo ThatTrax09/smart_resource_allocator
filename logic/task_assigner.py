@@ -66,11 +66,4 @@ class TaskAssigner:
                 print(f"  - {task['name']} (Skill: {task['required_skill']})")
         print("========================")
 
-# Example usage
-if __name__ == "__main__":
-    assigner = TaskAssigner(
-        resources_file="/../data/resources.json",
-        tasks_file="/../data/tasks.json"
-    )
-    assigner.assign_tasks()
-    assigner.print_assignments()
+
